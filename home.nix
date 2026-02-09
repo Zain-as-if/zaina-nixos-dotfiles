@@ -21,6 +21,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    gh
     btop
     fzf
     yazi
@@ -139,11 +140,11 @@
     '';
   };
 
-  xdg.configFile = {
-    # uncomment when doing neovim config
-    # nvim = ./config/nvim;
-    "hypr/hyprland.conf" = ./config/hypr/hyprland.conf;
-  };
+  #xdg.configFile = {
+  #  # uncomment when doing neovim config
+  #  # nvim = ./config/nvim;
+  #  "hypr/hyprland.conf" = ./config/hypr/hyprland.conf;
+  #};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
