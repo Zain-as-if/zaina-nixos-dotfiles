@@ -6,3 +6,4 @@
 - Wallpapers
 - Custom FastFetch
 - Kitty Config
+- Quickshell / Waybar Config 
