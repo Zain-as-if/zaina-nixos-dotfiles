@@ -14,6 +14,9 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
+  
+  # Enable gnome keyring
+  services.gnome-keyring.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -31,6 +34,7 @@
     starship
     hyprpaper
     nix-search-tv
+    gcr
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

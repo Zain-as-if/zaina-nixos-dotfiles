@@ -13,15 +13,44 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "zaina"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.wireless.enable = true;
+  networking.hostName = "zaina";
+  
+  networking.networkmanager.ensureProfiles.profiles = {
+      eduroam = {
+        connection = {
+	  id = "eduroam";
+	  type = "wifi";
+	  interface-name = "wlp2s0";
+	  autoconnect = true;
+	};
+	wifi = {
+          mode = "infrastructure";
+	  ssid = "eduroam";
+	};
+	wifi-security = {
+          key-mgmt = "wpa-eap";
+	};
+	"802-1x" = {
+          eap = "peap";
+	  identity = "U2584774@hud.ac.uk";
+	  ca-cert = "/etc/ssl/certs/ca-certificates.crt";
+          phase2-auth = "mschapv2";
+	};
+	ipv4 = {
+          method = "auto";
+	};
+	ipv6 = {
+          method = "auto";
+	};
+      };
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -46,8 +75,8 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = false;
+  services.desktopManager.plasma6.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -142,9 +171,6 @@
 
   # Enable zoxide
   programs.zoxide.enable = true;
-
-  # Auto-login
-  services.getty.autologinUser = "zaina";
 
   # HYPRLAND
   programs.hyprland = {
