@@ -17,6 +17,7 @@
   
   # Enable gnome keyring
   services.gnome-keyring.enable = true;
+  services.gnome-keyring.components = [ "secrets" "ssh" ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -35,6 +36,7 @@
     hyprpaper
     nix-search-tv
     gcr
+    zoxide
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

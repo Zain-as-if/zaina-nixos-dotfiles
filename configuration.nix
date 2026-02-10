@@ -16,6 +16,10 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+ 
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -145,9 +149,11 @@
     ];
   };
 
-  # Install firefox.
+  # Program Enables
   programs.firefox.enable = true;
-  programs.zsh.enable = true;
+  programs.zsh.enable = true;  
+  programs.seahorse.enable = true;
+  programs.zoxide.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -164,14 +170,14 @@
      kitty
      gcc
      unzip
+     seahorse
+     gnome-keyring
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
   
-  # Enable starship globally for your prompt
-  programs.starship.enable = true;
-
-  # Enable zoxide
-  programs.zoxide.enable = true;
-
   # HYPRLAND
   programs.hyprland = {
   	enable = true;
@@ -182,7 +188,9 @@
   # Screensharing with hyprland
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-hyprland 
+    ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
