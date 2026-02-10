@@ -3,7 +3,7 @@
 - Edit Hyprland Config
 - Make Own Starship Prompt
 - Tmux Config
-- Wallpapers
+- Wallpapers (Either continue configuring hyprpaper or use waypaper w/ hyprpaper backend
 - Custom FastFetch
 - Kitty Config
 - Quickshell / Waybar Config 
