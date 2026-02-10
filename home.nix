@@ -25,6 +25,10 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    bash
+    zsh
+    neovim
+    gcc
     gh
     btop
     fzf
@@ -37,6 +41,7 @@
     nix-search-tv
     gcr
     zoxide
+    ripgrep
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

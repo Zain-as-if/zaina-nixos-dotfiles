@@ -7,3 +7,5 @@
 - Custom FastFetch
 - Kitty Config
 - Quickshell / Waybar Config 
+- Eduroam Added To Keyring
+- Autologin to sddm, use hyprlock for PAM, only use sddm to switch DEs/WMs when logging out of hyprland session

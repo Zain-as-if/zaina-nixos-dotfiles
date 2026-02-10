@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -20,6 +20,7 @@
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -78,9 +79,18 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  # Disables the lightdm login manager than PAM uses
+  services.xserver.displayManager.lightdm.enable = false;
+  
+  # Enables sddm 
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+  
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = false;
-  services.desktopManager.plasma6.enable = false;
+  services.desktopManager.plasma6.enable = true;
+  programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -152,6 +162,7 @@
   # Program Enables
   programs.firefox.enable = true;
   programs.zsh.enable = true;  
+  programs.bash.enable = true;
   programs.seahorse.enable = true;
   programs.zoxide.enable = true;
 
@@ -161,14 +172,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     bash
-     zsh
      vim
-     neovim
      wget
      git
      kitty
-     gcc
      unzip
      seahorse
      gnome-keyring
