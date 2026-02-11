@@ -18,4 +18,4 @@
   - Rofi-Like Menu For Everything 
 
 # Inspiration (Basically Just Copying Ideas :D)
-https://omarchy.org/ - https://youtu.be/L3EafsSCv80
+https://omarchy.org/ - https://youtu.be/L3EafsSCv80 - https://github.com/basecamp/omarchy
