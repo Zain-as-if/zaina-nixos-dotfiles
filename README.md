@@ -11,9 +11,11 @@
 - Autologin to sddm, use hyprlock for PAM, only use sddm to switch DEs/WMs when logging out of hyprland session
 
 # Long-Term Goals
-- See Omarchy 
+- See Omarchy https://omarchy.org/
   - Theme Switcher (Colors, Wallpapers, Browsers, Apps (Neovim, Btop, Etc))
   - Font Switcher (Everything Switches)
   - Window To Show Keybinds
   - Rofi-Like Menu For Everything 
-    
+
+# Inspiration (Basically Just Copying Ideas :D)
+https://omarchy.org/ - https://youtu.be/L3EafsSCv80
