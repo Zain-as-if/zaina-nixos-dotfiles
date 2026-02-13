@@ -9,6 +9,8 @@
   services.gnome-keyring.enable = true;
   services.gnome-keyring.components = [ "secrets" "ssh" ];
 
+  programs.npm.enable = true;
+
   # The home.packages option allows you to install Nix packages into your environment.
   home.packages = with pkgs; [
     bash
@@ -27,8 +29,15 @@
     nix-search-tv
     gcr
     zoxide
-    ripgrep
-
+    ripgrep # better grep
+    fd # better  find
+    lua
+    lua-language-server
+    clang-tools
+    matlab-language-server
+    nil
+    lazygit
+ 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -58,6 +67,10 @@
     # '';
   };
 
+  home.sessionPath = [
+    "$HOME/Electrical-Engineering/Y1S2/Professional_Development/MATLAB/Week 6/Fundamentals_1/matlab-nix-imperative/matlab"
+  ];
+
   home.pointerCursor = {
     name = "Bibata-Modern-Classic";
     size = 16;
@@ -80,6 +93,7 @@
       edit = "sudo nvim ~/.dotfiles/";
       nixdelete = "sudo nix-collect-garbage --delete-older-than";
       ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+      battery="cat /sys/class/power_supply/BAT0/capacity";
     };
 
     history.size = 10000;
@@ -90,14 +104,14 @@
       theme = "jonathan";
       plugins = [
         "git"
-	"zoxide"
-	"starship"
-	"aliases"
-	"fzf"
-	"sudo"
-	"themes"
-	"tmux"
-	"web-search"
+      	"zoxide"
+	      "starship"
+	      "aliases"
+	      "fzf"
+	      "sudo"
+	      "themes"
+	      "tmux"
+	      "web-search"
       ];
     };
   };
@@ -110,8 +124,13 @@
   services.hyprpaper.enable = true;
 
   # Creates Symlinks for directories or files
-  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";
-
+  #xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";
+  xdg.configFile = {
+    "hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";
+    "nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/nvim";
+    "kitty".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/kitty";
+  };
+  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

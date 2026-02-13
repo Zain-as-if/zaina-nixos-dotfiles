@@ -26,6 +26,7 @@
   networking.networkmanager.enable = true;
   networking.wireless.enable = true;
   networking.hostName = "zaina";
+  networking.networkmanager.wifi.powersave = false;
   
   networking.networkmanager.ensureProfiles.profiles = {
       eduroam = {
@@ -156,6 +157,7 @@
     openssh.authorizedKeys.keys = [
     	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGDYtVg9vkekXkG2qHSMCJStPDjBZpJ2lszFPm6iKIkv arch-wsl" # Arch PC
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEkG2r47qkyn8jB7OKJsJy2vJOtgFrm9lWFTyvqDNSvD zain@Zain" # Powershell PC
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBy3dUHI2mkH6tzF/xtp0N8gXLX06dyKef9rvOFO7WNa zain@Zain" # Debian PC
     ];
   };
 
@@ -181,11 +183,7 @@
      gnome-keyring
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
-  
-  # HYPRLAND
+    # HYPRLAND
   programs.hyprland = {
   	enable = true;
 	withUWSM = true;
@@ -198,6 +196,37 @@
     extraPortals = with pkgs; [ 
       xdg-desktop-portal-hyprland 
     ];
+  };
+
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.mononoki
+      nerd-fonts.droid-sans-mono
+    ];
+
+    fontconfig = {
+      enable = true;
+
+      defaultFonts = {
+        serif = [ "JetBrainsMono Nerd Font" ];
+        sansSerif = [ "JetBrainsMono Nerd Font" ];
+        monospace = [ "JetBrainsMono Nerd Font" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
+
+      localConf = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <match target="pattern">
+            <edit name="family" mode="assign" binding="strong">
+              <string>JetBrainsMono Nerd Font</string>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
