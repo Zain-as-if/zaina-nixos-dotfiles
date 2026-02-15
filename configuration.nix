@@ -177,10 +177,10 @@
      vim
      wget
      git
-     kitty
      unzip
      seahorse
      gnome-keyring
+     ghostty
   ];
 
     # HYPRLAND

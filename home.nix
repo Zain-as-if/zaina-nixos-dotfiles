@@ -129,7 +129,6 @@
   xdg.configFile = {
     "hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/nvim";
-    "kitty".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/kitty";
     "fastfetch".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/fastfetch";
   };
   
