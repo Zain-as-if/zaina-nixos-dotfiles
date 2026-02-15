@@ -10,6 +10,7 @@
   services.gnome-keyring.components = [ "secrets" "ssh" ];
 
   programs.npm.enable = true;
+  programs.fastfetch.enable = true;
 
   # The home.packages option allows you to install Nix packages into your environment.
   home.packages = with pkgs; [
@@ -129,6 +130,7 @@
     "hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/nvim";
     "kitty".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/kitty";
+    "fastfetch".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/fastfetch";
   };
   
   # Let Home Manager install and manage itself.
