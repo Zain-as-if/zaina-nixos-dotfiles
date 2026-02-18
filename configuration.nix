@@ -183,12 +183,15 @@
      ghostty
   ];
 
-    # HYPRLAND
+  # HYPRLAND
   programs.hyprland = {
   	enable = true;
 	withUWSM = true;
 	xwayland.enable = true;
   };
+
+  # Niri 
+  programs.niri.enable = true;
 
   # Screensharing with hyprland
   xdg.portal = {

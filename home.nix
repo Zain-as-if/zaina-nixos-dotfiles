@@ -130,6 +130,8 @@
     "hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/nvim";
     "fastfetch".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/fastfetch";
+    "ghostty".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/ghostty";
+    "niri".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/niri";
   };
   
   # Let Home Manager install and manage itself.
