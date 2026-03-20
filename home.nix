@@ -38,6 +38,10 @@
     matlab-language-server
     nil
     lazygit
+    grim
+    slurp
+    wl-clipboard
+    feh
  
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
