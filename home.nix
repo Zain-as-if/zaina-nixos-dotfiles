@@ -41,7 +41,6 @@
     slurp
     wl-clipboard
     feh
-    waypaper
     awww.packages.${pkgs.system}.default
  
     # # It is sometimes useful to fine-tune packages, for example, by applying
