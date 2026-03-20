@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, awww, ... }:
 
 {
   home.username = "zaina";
@@ -26,7 +26,6 @@
     tmux
     bat
     starship
-    hyprpaper
     nix-search-tv
     gcr
     zoxide
@@ -42,6 +41,8 @@
     slurp
     wl-clipboard
     feh
+    waypaper
+    awww.packages.${pkgs.system}.default
  
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -125,8 +126,6 @@
     enable = true;
     systemd.enable = false; # says no to home-manager editing, just want to link
   };
-
-  services.hyprpaper.enable = true;
 
   # Creates Symlinks for directories or files
   #xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/hypr";

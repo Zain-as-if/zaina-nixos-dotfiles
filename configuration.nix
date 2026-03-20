@@ -6,6 +6,10 @@
       ./hardware-configuration.nix
     ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "quickjs-2025-09-13-2"
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
