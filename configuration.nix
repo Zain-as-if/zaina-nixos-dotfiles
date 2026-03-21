@@ -171,6 +171,7 @@
   programs.bash.enable = true;
   programs.seahorse.enable = true;
   programs.zoxide.enable = true;
+  programs.nix-ld.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
