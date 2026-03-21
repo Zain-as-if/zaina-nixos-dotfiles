@@ -44,7 +44,8 @@
     awww.packages.${pkgs.system}.default
     octave
     rofi
- 
+    bc
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -136,6 +137,7 @@
     "fastfetch".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/fastfetch";
     "ghostty".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/ghostty";
     "niri".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/niri";
+    "rofi".source = config.lib.file.mkOutOfStoreSymlink "/home/zaina/.dotfiles/config/rofi";
   };
   
   # Let Home Manager install and manage itself.
