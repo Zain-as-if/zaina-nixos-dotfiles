@@ -16,6 +16,8 @@
   - Font Switcher (Everything Switches)
   - Window To Show Keybinds
   - Rofi-Like Menu For Everything 
+- Quickshell Wallpaper Selector
+  - https://www.reddit.com/r/unixporn/comments/1rz6nil/oc_made_a_command_based_quickshell_wallpaper/
 
 # Inspiration (Basically Just Copying Ideas :D)
 https://omarchy.org/ - https://youtu.be/L3EafsSCv80 - https://github.com/basecamp/omarchy
