@@ -101,8 +101,12 @@
       edit = "sudo nvim ~/.dotfiles/";
       nixdelete = "sudo nix-collect-garbage --delete-older-than";
       ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-      battery="cat /sys/class/power_supply/BAT0/capacity";
+      battery="\cat /sys/class/power_supply/BAT0/capacity";
     };
+
+    initContent = ''
+      alias status='printf "Time: %s\nBattery: %s%%\n" "$(date +%T)" "$(cat /sys/class/power_supply/BAT0/capacity)"'
+    '';
 
     history.size = 10000;
 
